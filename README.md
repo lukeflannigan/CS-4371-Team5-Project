@@ -7,6 +7,13 @@
 
 ## Setup Instructions
 
+### Install Extensions
+- Open Visual Studio Code.
+- Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code or by pressing `Ctrl+Shift+X` (or `Cmd+Shift+X` on macOS).
+- Search for and install the following extensions:
+- - Python (by Microsoft)
+- - Jupyter (by Microsoft)
+
 ### Clone the Repository
 
 - Open Visual Studio Code.
