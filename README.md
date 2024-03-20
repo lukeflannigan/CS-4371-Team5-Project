@@ -17,8 +17,12 @@
   ```
   git clone https://github.com/lukeflannigan/CS-4371-Team5-Project.git
   ```
-- - If you cloned the repository using VS Code's integrated terminal and are already in the project directory, your project should be accessible in the current VS Code window. If not, use `File > Open Folder...` from the VS Code menu bar to navigate to and open the cloned project directory.
 
+- After cloning, you need to change the directory to the project folder. Run:
+    ```
+    cd CS-4371-Team5-Project
+    ```
+    
 ### Create and Activate a Virtual Environment
 
 Within the project directory in VS Code Terminal:
