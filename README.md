@@ -13,7 +13,7 @@
 - To clone the repository into a specific folder, you can drag and drop the folder into VS Code or use the Terminal to navigate:
   - Press `Ctrl+` (or `Cmd+` on macOS) to open the Terminal in VS Code.
   - Navigate to your desired directory with `cd <directory-path>`.
-- Run the command in the terminal to clone the repository: 
+- Run the command in the VS Code terminal `View > Terminal` to clone the repository: 
   ```
   git clone https://github.com/lukeflannigan/CS-4371-Team5-Project.git
   ```
