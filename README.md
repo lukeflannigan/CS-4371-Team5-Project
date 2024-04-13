@@ -51,7 +51,10 @@ pip install -r requirements.txt
 
 - Ensure the Python interpreter is set to the virtual environment you created. This interpreter will typically have `venv` in its path, indicating it's the virtual environment for this project.
 - If not set automatically, open Command Palette with `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS), type `Python: Select Interpreter`, and select the interpreter that includes `venv` and is located within your project directory.
-
+- If necessary:
+  - Install the `ipykernel` package using pip: `pip install ipykernel`.
+  - Run the command `python -m ipykernel install --user --name=myenv` to create a new kernel named `myenv` associated with your virtual environment (`venv`).
+  - In VS Code, open a Jupyter Notebook and select the newly created kernel (`myenv`) from the kernel dropdown menu in the top-right corner of the notebook interface.
 ### Run Jupyter Notebook
 
 - Open `fake_news_model.ipynb` from the Explorer sidebar.
