@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Predictor</title>
+    <style>
+
+    @media (max-width: 600px) {
+        body {
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+        }
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none; /* Disable resizing the textarea */
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real or Fake News Article Predictor</h1>
+    <form action="/predict" method="post">
+        <textarea name="article" placeholder="Enter your article here...">{{ request.form.article }}</textarea><br>
+        <input type="submit" value="Generate Prediction">
+    </form>
+    {% if results %}
+        <h2>Prediction Results:</h2>
+        <ul>
+            <li>Logistic Regression: {{ results.lr.prediction }} (Probability: {{ results.lr.probability|round(2) }})</li>
+            <li>Random Forest: {{ results.rf.prediction }} (Probability: {{ results.rf.probability|round(2) }})</li>
+            <li>XGBoost: {{ results.gb.prediction }} (Probability: {{ results.gb.probability|round(2) }})</li>
+        </ul>
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
