@@ -24,13 +24,43 @@ The user interface, accessible via a web browser, allows users to test a news ar
 
 - [Visual Studio Code](https://code.visualstudio.com/download) installed.
 - [Python](https://www.python.org/downloads/) installed (latest version recommended).
-
+- 
 ### Install Extensions
 - Open Visual Studio Code.
 - Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code or by pressing `Ctrl+Shift+X` (or `Cmd+Shift+X` on macOS).
 - Search for and install the following extensions:
 - - Python (by Microsoft)
 - - Jupyter (by Microsoft)
+
+
+### Git LFS
+Before you can use this repository, you'll need to have Git and Git LFS installed:
+
+1. **Install Git** (if not already installed): [https://git-scm.com/downloads](https://git-scm.com/downloads)
+2. **Install Git LFS**:
+
+#### For macOS Users
+- **Install Using Homebrew**:
+  - If you do not have Homebrew installed, open Terminal and install Homebrew by running:
+    ```
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+  - Install Git LFS with Homebrew by executing:
+    ```
+    brew install git-lfs
+    ```
+
+#### For Windows Users
+- **Download the Installer**:
+  - Visit the [Git LFS Releases Page](https://github.com/git-lfs/git-lfs/releases) and download the `git-lfs-windows-vX.X.X.exe` file (where `X.X.X` is the latest version).
+  - Run the installer and follow the prompts to install Git LFS.
+
+### 3. Initialize Git LFS
+
+After installing Git LFS, you must run the following command in your terminal to set it up for use:
+```
+git lfs install
+```
 
 ### Clone the Repository
 
