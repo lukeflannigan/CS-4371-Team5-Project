@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        @media (max-width: 600px) {
+            body {
+                margin: 20px;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    {% if predictions %}
+        <ul>
+            <li>Logistic Regression Prediction: {{ predictions['Logistic Regression']['result'] }} (Probability: {{ predictions['Logistic Regression']['probability'] }})</li>
+            <li>Random Forest Prediction: {{ predictions['Random Forest']['result'] }} (Probability: {{ predictions['Random Forest']['probability'] }})</li>
+            <li>XGBoost Prediction: {{ predictions['XGBoost']['result'] }} (Probability: {{ predictions['XGBoost']['probability'] }})</li>
+        </ul>
+        <!-- Image tag for displaying the prediction graph -->
+        <img src="{{ url_for('static', filename='prediction_graph.png') }}" alt="Prediction Probabilities Graph">
+    {% else %}
+        <p>No prediction could be made. Please try again.</p>
+    {% endif %}
+    <a href="/">Try another article</a>
+</body>
+</html>
