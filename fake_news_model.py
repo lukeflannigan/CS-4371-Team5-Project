@@ -1,4 +1,3 @@
-
 import joblib
 import re
 import matplotlib
@@ -7,12 +6,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the trained models
-lr_model = joblib.load('lr_model.pkl')
-rf_model = joblib.load('rf_model.pkl')
-gb_model = joblib.load('gb_model.pkl')
+lr_model = joblib.load('pretrained_models/lr_model.pkl')
+rf_model = joblib.load('pretrained_models/rf_model.pkl')
+gb_model = joblib.load('pretrained_models/gb_model.pkl')
 
 # Load the vectorizer
-tfidf_vectorizer = joblib.load('tfidf_vectorizer.pkl')
+tfidf_vectorizer = joblib.load('pretrained_models/tfidf_vectorizer.pkl')
 
 def preprocess_text(text):
     text = text.lower()
@@ -28,7 +27,7 @@ def preprocess_text(text):
     return ' '.join(filtered_words)
 
 def create_comparison_graph(models, prob_real, prob_fake, file_path):
-    plt.style.use('seaborn-v0_8-whitegrid')
+    plt.style.use('seaborn-whitegrid')
 
     bar_width = 0.35  # Width of the bars
     index = np.arange(len(models))  # The position of bars on the x-axis
@@ -36,8 +35,8 @@ def create_comparison_graph(models, prob_real, prob_fake, file_path):
     fig, ax = plt.subplots(figsize=(10, 6))
 
     # Creating bars for "Real" and "Fake"
-    bar1 = ax.bar(index, prob_real, bar_width, label='Real', color='blue', alpha=0.8)
-    bar2 = ax.bar(index + bar_width, prob_fake, bar_width, label='Fake', color='red', alpha=0.8)
+    bar1 = ax.bar(index, prob_real, bar_width, label='Real', color='blue', alpha=0.8)  # Blue for "Real"
+    bar2 = ax.bar(index + bar_width, prob_fake, bar_width, label='Fake', color='red', alpha=0.8)  # Red for "Fake"
 
     ax.set_title('Probability of Authenticity', fontsize=16, fontweight='bold', color='black', pad=20)
     ax.set_xlabel('Model', fontsize=14, color='black')
