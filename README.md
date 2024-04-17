@@ -59,3 +59,8 @@ pip install -r requirements.txt
 
 - Open `fake_news_model.ipynb` from the Explorer sidebar.
 - Run notebook cells by clicking the play button (`▶`) in each cell.
+  
+### Research
+-Prior research: THE CURIOUS CASE OF NEURAL TEXT DeGENERATION https://arxiv.org/pdf/1904.09751v2.pdf
+-Contemporary: RoFT: A Tool for Evaluating Human Detection of Machine-Generated Text https://arxiv.org/pdf/2010.03070.pdf
+
