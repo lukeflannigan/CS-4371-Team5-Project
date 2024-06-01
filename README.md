@@ -1,4 +1,4 @@
-# Fake-News-Classifier Class Project CS-4371
+# Fake-News-Classifier 
 
 ## Overview
 In this project, we developed several machine learning models to classify real and fake news articles.
